@@ -21,5 +21,6 @@ public class Producer {
     public void sendMessageToRabbitMq(UserDTO userDTO)
     {
         rabbitTemplate.convertAndSend(exchange.getName(),"user_routing",userDTO);
+        //rabbitTemplate.convertAndSend(exchange.getName(),"user_routings",userDTO);
     }
 }

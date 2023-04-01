@@ -25,6 +25,7 @@ services:
       MYSQL_USERNAME: user
       MYSQL_PASSWORD: root
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
   mongodbservice:
     image: mongo:latest
     container_name: mongo-container
@@ -60,7 +61,7 @@ services:
 #    hostname: localhost
 #    network_mode: host
     ports:
-      - 8081:8081
+      - 8083:8083
     depends_on:
       - mongodbservice
       - eurekaServer
@@ -84,8 +85,8 @@ services:
         - eurekaServer
         - cloudapiservice
     restart: always
-    environment:
-      SPRING_RABBITMQ_HOST: rabbitmq-container
+#    environment:
+#      SPRING_RABBITMQ_HOST: rabbitmq-container
 
 
   cloudapiservice:

@@ -19,7 +19,7 @@ public class AppConfig {
                 .path("/api/v2/user/**","/api/v2/register")
                         .uri("lb://user-track-service"))
                 .route(p -> p
-                        .path("api/v3/**")
+                        .path("/api/v3/**")
                         .uri("lb://user-music-service"))
                 .build();
     }
